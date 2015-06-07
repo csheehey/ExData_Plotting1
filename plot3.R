@@ -1,4 +1,4 @@
-# This script produces a timeline plot of global active power usage across
+# This script produces a timeline plot of energy sub metering usage across
 #   the two day period from 2/1/2007 - 2/2/2007
 
 # Begin by downloading and unzipping the data from the following URL into your wd
@@ -17,7 +17,7 @@ elec.sub <- elec[subset, ]
 elec.sub$date.time <- strptime(paste(elec.sub$Date, elec.sub$Time), 
                                "%Y-%m-%d %H:%M:%S")
 
-# Create timeline plot of global active power usage as png as save as plot3.png
+# Create timeline plot of sub metering usage as png as save as plot3.png
 png(file = "plot3.png", height = 480, width = 480)
 with(elec.sub, {
   plot(x = date.time, y = Sub_metering_1,

@@ -1,5 +1,5 @@
-# This script produces a timeline plot of global active power usage across
-#   the two day period from 2/1/2007 - 2/2/2007
+# This script produces four plot related to energy usage during the two day
+#   period from 2/1/2007 - 2/2/2007
 
 # Begin by downloading and unzipping the data from the following URL into your wd
 #   URL: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
@@ -17,7 +17,7 @@ elec.sub <- elec[subset, ]
 elec.sub$date.time <- strptime(paste(elec.sub$Date, elec.sub$Time), 
                                "%Y-%m-%d %H:%M:%S")
 
-# Create timeline plot of global active power usage as png as save as plot4.png
+# Create four plots as one png file and as save as plot4.png
 png(file = "plot4.png", height = 480, width = 480)
 par(mfrow = c(2,2))
 with(elec.sub, {
